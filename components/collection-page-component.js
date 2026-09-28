@@ -5,10 +5,21 @@ export default {
     const searchText = Vue.ref('');
     const selectedDifficulty = Vue.ref('');
     const selectedDistance = Vue.ref('');
-    const bookmarkedItemIds = String(window.localStorage.getItem('hikingTrailExplorer.bookmarkedItemIds') || '')
-      .split(',')
-      .map((id) => id.trim())
-      .filter(Boolean);
+    const bookmarkedItemIds = Vue.ref([]);
+    const bookmarkStorageError = Vue.ref('');
+
+    try {
+      bookmarkedItemIds.value = String(
+        window.localStorage.getItem('hikingTrailExplorer.bookmarkedItemIds') || ''
+      )
+        .split(',')
+        .map((id) => id.trim())
+        .filter(Boolean);
+    } catch {
+      bookmarkStorageError.value =
+        'Saved bookmarks could not be loaded in this browser. Bookmark status may be unavailable.';
+    }
+
     const searchableFields = [
       'name',
       'description',
@@ -53,7 +64,7 @@ export default {
       });
     });
 
-    const isBookmarked = (itemId) => bookmarkedItemIds.includes(itemId);
+    const isBookmarked = (itemId) => bookmarkedItemIds.value.includes(itemId);
 
     return {
       itemsStore,
@@ -62,19 +73,28 @@ export default {
       selectedDistance,
       filteredItems,
       isBookmarked,
+      bookmarkStorageError,
     };
   },
   template: /* html */ `
-    <section class="trail-collection">
+    <section class="trail-collection" :aria-busy="itemsStore.isLoading">
       <div class="container py-5">
         <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
           <div>
             <p class="trail-collection__eyebrow mb-2">Bloomington, Indiana</p>
             <h1 class="trail-collection__heading mb-0">Explore trails</h1>
           </div>
-          <span class="trail-collection__count">
+          <span
+            v-if="!itemsStore.isLoading && !itemsStore.error && itemsStore.items.length > 0"
+            class="trail-collection__count"
+            role="status"
+            aria-live="polite">
             {{ filteredItems.length }} {{ filteredItems.length === 1 ? 'trail' : 'trails' }}
           </span>
+        </div>
+
+        <div v-if="bookmarkStorageError" class="alert alert-warning" role="alert">
+          {{ bookmarkStorageError }}
         </div>
 
         <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
@@ -133,13 +153,19 @@ export default {
             No matching trails found.
           </div>
 
-          <div v-else class="row g-3 g-lg-4">
-            <div class="col-12 col-md-6 col-lg-4" v-for="item in filteredItems" :key="item.id">
+          <div v-else class="row g-3 g-lg-4" role="list" aria-label="Trail results">
+            <div
+              class="col-12 col-md-6 col-lg-4"
+              v-for="item in filteredItems"
+              :key="item.id"
+              role="listitem">
               <article class="trail-card h-100">
                 <img
                   v-if="item.imageUrl"
                   :src="item.imageUrl"
                   :alt="item.name"
+                  loading="lazy"
+                  decoding="async"
                   class="trail-card__image object-fit-cover" />
 
                 <div class="trail-card__body">
