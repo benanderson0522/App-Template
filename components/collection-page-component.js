@@ -8,59 +8,61 @@ export default {
     };
   },
   template: /* html */ `
-    <section class="container py-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="h3 mb-0">Collection</h1>
-        <span class="badge text-bg-light border">{{ itemsStore.items.length }} shown</span>
-      </div>
+    <section class="trail-collection">
+      <div class="container py-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <p class="trail-collection__eyebrow mb-2">Bloomington, Indiana</p>
+            <h1 class="trail-collection__heading mb-0">Explore trails</h1>
+          </div>
+          <span class="trail-collection__count">{{ itemsStore.items.length }} trails</span>
+        </div>
 
-      <p class="text-muted">Browse a simple dataset loaded from a CSV file.</p>
+        <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
+          Loading trails...
+        </div>
 
-      <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
-        Loading items...
-      </div>
+        <div v-else-if="itemsStore.error" class="alert alert-danger" role="alert">
+          {{ itemsStore.error }}
+        </div>
 
-      <div v-else-if="itemsStore.error" class="alert alert-danger" role="alert">
-        {{ itemsStore.error }}
-      </div>
+        <div v-else-if="itemsStore.items.length === 0" class="alert alert-warning" role="alert">
+          No trails found.
+        </div>
 
-      <div v-else-if="itemsStore.items.length === 0" class="alert alert-warning" role="alert">
-        No items found in the dataset.
-      </div>
+        <div v-else class="row g-3 g-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
+            <article class="trail-card h-100">
+              <img
+                v-if="item.imageUrl"
+                :src="item.imageUrl"
+                :alt="item.name"
+                class="trail-card__image object-fit-cover" />
 
-      <div v-else class="row g-3">
-        <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
-          <article class="card h-100 shadow-sm border-0">
-            <img
-              v-if="item.imageUrl"
-              :src="item.imageUrl"
-              :alt="item.name"
-              class="card-img-top collection-card-image object-fit-cover" />
-            <div
-              v-else
-              class="collection-card-image d-flex align-items-center justify-content-center bg-light text-muted">
-              No image available
-            </div>
+              <div class="trail-card__body">
+                <h2 class="trail-card__title">{{ item.name }}</h2>
 
-            <div class="card-body d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h2 class="h5 card-title mb-0">{{ item.name }}</h2>
-                <span class="badge text-bg-primary ms-2">{{ item.category || 'General' }}</span>
-              </div>
+                <dl class="trail-card__details">
+                  <div>
+                    <dt>Difficulty</dt>
+                    <dd>{{ item.difficulty || 'Information unavailable' }}</dd>
+                  </div>
+                  <div>
+                    <dt>Distance</dt>
+                    <dd>{{ item.distance ? item.distance + ' mi' : 'Information unavailable' }}</dd>
+                  </div>
+                  <div>
+                    <dt>Location</dt>
+                    <dd>{{ item.location || 'Information unavailable' }}</dd>
+                  </div>
+                </dl>
 
-              <p class="card-text text-muted flex-grow-1 collection-description">
-                {{ item.description || 'No description available.' }}
-              </p>
-
-              <p class="small mb-3"><strong>Location:</strong> {{ item.location || 'N/A' }}</p>
-
-              <div class="d-grid">
-                <router-link :to="'/items/' + item.id" class="btn btn-outline-secondary btn-sm">
-                  View details
+                <router-link :to="'/items/' + item.id" class="trail-card__link">
+                  View trail
                 </router-link>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
     </section>

@@ -109,16 +109,108 @@
   color: #f5f1e5;
 }
 
-.collection-card-image {
-  height: 180px;
+.trail-collection {
+  background: #16302a;
+  color: #f5f1e5;
+  min-height: 100%;
 }
 
-.collection-description {
-  display: -webkit-box;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.trail-collection__eyebrow {
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.trail-collection__heading {
+  color: #f5f1e5;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.trail-collection__count {
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.trail-card {
+  background: #1f3d31;
+  border: 1px solid rgba(231, 220, 192, 0.2);
+  border-radius: 12px;
+  color: #f5f1e5;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.trail-card:hover {
+  background: #264a3b;
+  border-color: #5c7a5a;
+}
+
+.trail-card__image {
+  height: 180px;
+  width: 100%;
+}
+
+.trail-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.trail-card__title {
+  color: #f5f1e5;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.trail-card__details {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.trail-card__details dt {
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.trail-card__details dd {
+  color: #f5f1e5;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.trail-card__link {
+  align-self: flex-start;
+  background: #c0602e;
+  border-radius: 8px;
+  color: #f5f1e5;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-weight: 500;
+  margin-top: auto;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.trail-card__link:hover {
+  background: #ce7040;
+  color: #f5f1e5;
+}
+
+.trail-card__link:focus-visible {
+  outline: 3px solid #e7dcc0;
+  outline-offset: 3px;
 }
 
 .item-detail-image {
