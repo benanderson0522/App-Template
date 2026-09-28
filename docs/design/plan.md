@@ -57,7 +57,7 @@ We will build a responsive web application that allows hikers to browse a collec
   - Optional Bootstrap library
 - Assumptions being made:
   - The initial trail collection will be small enough for client-side search and filtering.
-  - The initial collection contains five trails: Creek's Edge Trail, Ninth Street Loop, Southeast Trail, Jackson Creek Trail, and Leonard Springs Nature Park Trail.
+  - The initial collection contains five source-backed trails—Creek's Edge Trail, Ninth Street Loop, Southeast Trail, Jackson Creek Trail, and Leonard Springs Nature Park Trail—plus ten clearly labeled fictional sample trails for testing.
   - The City of Bloomington Open Data "Park Trails & Paths" dataset is the approved source for the initial trail names, locations, and distances. Its catalog lists the Open Data Commons Public Domain Dedication and License (PDDL) 1.0. Distances are the sums of mapped segments for each trail label, rounded to three decimal places.
   - The required trail fields are name, difficulty, distance, and location. Difficulty is not available in the approved dataset and will remain unavailable unless a suitable source is confirmed; optional information will not be invented.
   - Trail information will be obtained from sources that permit reuse or will be rewritten as original sample data.
@@ -112,7 +112,32 @@ Source: [City of Bloomington Open Data — Park Trails & Paths](https://data.blo
 10. Conduct usability testing with at least two additional observers.
 11. Test the acceptance criteria, correct defects, review scope and costs, and prepare optional deployment.
 
-## 7. Review & Approval
+## 7. T14 Scope, Cost & Optional Deployment Review
+
+Reviewed 2026-09-28 after acceptance-criteria testing.
+
+### Scope
+
+- The application remains focused on the planned trail collection, search, filters, trail details, and browser-local bookmarks.
+- The exclusions in ADR-07 remain out of scope: GPS tracking, active navigation, emergency services, payments, messaging, guaranteed live conditions, complete trail coverage, and advanced mapping.
+- The ten records named "Sample Data Trail" are clearly identified as fictional test data; they do not claim to expand real trail coverage. The original five records remain tied to the approved City of Bloomington dataset described above.
+
+### Cost and timeline
+
+- The planning estimates remain approximately $800 for the prototype, $150 per year in recurring costs, and 6–8 weeks to complete.
+- The project documents do not include an itemized actual or forecast cost breakdown, selected hosting plan, or evidence that actual costs are within those estimates. These figures remain targets, not verified totals.
+- The app does not require a backend, database, or application API for its core flows. The page does load Vue, Vue Router, Bootstrap, Bootstrap Icons, and Papa Parse from CDNs, and one sample image from an external host; those assets depend on network and third-party availability. Hosting/CDN charges have not been priced in this review.
+
+### Optional deployment readiness
+
+- The app uses static HTML, CSS, JavaScript, CSV data, and hash-based routes, which is compatible in principle with the static hosting options listed in this plan.
+- No hosting provider has been selected and no deployment configuration or workflow is present. The app has only been checked in a local browser preview; it has not been tested at a deployed URL.
+- Before any public deployment, select a host, verify its cost against the budget, test the deployed asset and CSV paths (including a project subpath if applicable), and confirm that external CDN assets and the user-approved sample image are available.
+- Keep the informational disclaimer in place, do not present the app as official or emergency guidance, and preserve the fictional sample-data labels. Do not imply that sample ratings, reviews, amenities, or conditions describe real trails.
+
+**Review outcome:** The current prototype is suitable for optional static-host evaluation, but public deployment and budget compliance are not yet confirmed. The project owner should choose a host, verify actual costs and asset permissions, test the hosted app, and complete the pending approvals in Section 8 before public launch. No deployment was performed as part of T14.
+
+## 8. Review & Approval
 
 | Reviewer | Date | Approved? |
 |---|---|---|
@@ -127,4 +152,4 @@ Source: [City of Bloomington Open Data — Park Trails & Paths](https://data.blo
 - [x] Every component maps to at least one requirement or constitutional principle.
 - [x] Every risk includes a mitigation.
 - [x] Sequencing places data decisions and uncertain requirements before implementation.
-- [ ] Section 7 is signed off.
+- [ ] Section 8 is signed off.
