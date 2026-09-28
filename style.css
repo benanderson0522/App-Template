@@ -1,3 +1,114 @@
+.trail-navbar {
+  background: #16302a;
+  border-bottom: 1px solid rgba(231, 220, 192, 0.2);
+  font-family: "Work Sans", Arial, sans-serif;
+}
+
+.trail-navbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.trail-navbar__brand {
+  color: #f5f1e5;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.trail-navbar__brand:hover {
+  color: #e7dcc0;
+}
+
+.trail-navbar__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trail-navbar__link {
+  border-radius: 8px;
+  color: #f5f1e5;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.trail-navbar__link:hover,
+.trail-navbar__link.router-link-exact-active {
+  background: #1f3d31;
+  color: #e7dcc0;
+}
+
+.trail-navbar__brand:focus-visible,
+.trail-navbar__link:focus-visible,
+.home-hero__action:focus-visible {
+  outline: 3px solid #e7dcc0;
+  outline-offset: 3px;
+}
+
+.home-hero {
+  align-items: center;
+  background: #16302a;
+  color: #f5f1e5;
+  display: flex;
+  min-height: 520px;
+  padding: 64px 0;
+}
+
+.home-hero__content {
+  max-width: 840px;
+  text-align: center;
+}
+
+.home-hero__location {
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.home-hero__heading {
+  color: #f5f1e5;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.home-hero__description {
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 18px;
+  margin: 0 auto 32px;
+  max-width: 600px;
+}
+
+.home-hero__action {
+  background: #c0602e;
+  border-radius: 8px;
+  color: #f5f1e5;
+  display: inline-block;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-weight: 500;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.home-hero__action:hover {
+  background: #ce7040;
+  color: #f5f1e5;
+}
+
 .collection-card-image {
   height: 180px;
 }
