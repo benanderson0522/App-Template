@@ -7,7 +7,7 @@
 | ID | Task | Traces to (R# / ADR#) | Depends on | Status |
 |----|------|--------------------------|------------|--------|
 | T1 | Confirm the initial trail dataset, required fields, and approved source permissions | ADR-01, ADR-08, R2, R5, R7-R10, R14, Constitution 1, Compliance/Legal constraint | — | Done |
-| T2 | Create the sample trail dataset with required fields and placeholder values for missing optional data | ADR-01, ADR-06, ADR-08, R2, R5, R10, R14 | T1 | Not started |
+| T2 | Create the sample trail dataset with required fields and placeholder values for missing optional data | ADR-01, ADR-06, ADR-08, R2, R5, R10, R14 | T1 | Done |
 | T3 | Build the shared primary navigation and homepage flow for the Hiking Trail Explorer | R1, R6, ADR-05 | T2 | Not started |
 | T4 | Build the responsive trail collection layout and trail cards with name, difficulty, distance, and location | R2, R3, ADR-04, ADR-05 | T2 | Not started |
 | T5 | Implement client-side text search across the trail collection | R7, ADR-02 | T4 | Not started |
