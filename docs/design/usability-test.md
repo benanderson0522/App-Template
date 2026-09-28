@@ -92,8 +92,32 @@ Use these checks during or after the sessions. A pass means the listed behavior 
 
 ### Sample-data note
 
-The current CSV sample has unavailable difficulty and optional-information values for its trails. It can be used to try the unavailable-difficulty filter and missing-information behavior, but it does not contain a trail with complete basic information, available optional information, or a known difficulty level. Mark R2, R5, and the known-difficulty cases for R8 as **Not testable with current sample data** unless approved data is available; do not change the dataset as part of this test.
+The CSV includes ten clearly labeled, fictional sample trails with complete trail-information fields, including difficulty and optional details, so R2, R5, and R8 can be tested. Their names and descriptions identify them as sample data; their conditions, ratings, and reviews are illustrative and are not real trail reports. The image URL is used only for the first sample trail and was provided with permission. The original five trails remain available for testing unavailable-information behavior under R14.
 
 ## Completion record
 
-Do not mark T12 Done until two observer sessions have been completed and 2–3 evidence-based findings have been recorded above.
+T12 is complete: two observer sessions and two evidence-based findings are recorded above.
+
+## T13 acceptance test record
+
+Tested in a local browser preview on 2026-09-28 with all 15 CSV trails loaded. The checks below passed by observing the stated behavior in the app.
+
+| Requirement | Result | Evidence |
+|---|---|---|
+| R1 | Pass | Primary navigation was visible on Home, Explore Trails, About, and a trail detail page. |
+| R2 | Pass | Sample Data Trail 01 displayed its name, Easy difficulty, 0.8 mi distance, and sample location on its card. |
+| R3 | Pass | Selecting Sample Data Trail 01 opened its detail page. |
+| R4 | Pass | “Back to trails” returned from the detail page to the collection. |
+| R5 | Pass | The sample trail detail page displayed its available point of interest. |
+| R6 | Pass | The homepage “Explore Trails” action opened the collection. |
+| R7 | Pass | Searching for Sample Data Trail 05 displayed the matching trail. |
+| R8 | Pass | Selecting Easy displayed four trails, each with Easy difficulty. |
+| R9 | Pass | Selecting Over 3 mi displayed three sample trails, each over three miles. |
+| R10 | Pass | The selected trail's detail page showed the selected trail name. |
+| R11 | Pass | Selecting “Bookmark trail” changed the button to its pressed, Bookmarked state. |
+| R12 | Pass | After returning to the collection and reopening the trail, its bookmark remained selected. |
+| R13 | Pass | The detail button and collection card both visibly identified the bookmarked trail. |
+| R14 | Pass | The original Creek’s Edge Trail detail page displayed “Information unavailable” for missing fields. |
+| R15 | Pass | Searching for “Not a real trail” displayed “No matching trails found.” |
+
+The Clay text and interaction contrast states were also checked after the T11 correction: Cream on the primary Clay variant (#A64D27) is 5.01:1, Cream on its hover variant (#AD552E) is 4.52:1, and Sand focus color (#E7DCC0) against Pine (#1F3D31) is 8.70:1. No further acceptance defects were observed in these checks. The usability observations about green color and scrolling remain recorded findings, not confirmed failures of an acceptance criterion, and were not used to expand this task into a redesign.

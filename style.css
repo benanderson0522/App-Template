@@ -94,7 +94,7 @@
 }
 
 .home-hero__action {
-  background: #c0602e;
+  background: #a64d27;
   border-radius: 8px;
   color: #f5f1e5;
   display: inline-block;
@@ -105,7 +105,7 @@
 }
 
 .home-hero__action:hover {
-  background: #ce7040;
+  background: #ad552e;
   color: #f5f1e5;
 }
 
@@ -193,8 +193,8 @@
 
 .trail-search__input:focus,
 .trail-filter__select:focus {
-  border-color: #c0602e;
-  box-shadow: 0 0 0 3px rgba(192, 96, 46, 0.35);
+  border-color: #e7dcc0;
+  box-shadow: 0 0 0 3px rgba(231, 220, 192, 0.25);
   outline: none;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .trail-card__bookmark {
-  background: #c0602e;
+  background: #a64d27;
   border-radius: 8px;
   color: #f5f1e5;
   flex-shrink: 0;
@@ -287,7 +287,7 @@
 
 .trail-card__link {
   align-self: flex-start;
-  background: #c0602e;
+  background: #a64d27;
   border-radius: 8px;
   color: #f5f1e5;
   font-family: "Work Sans", Arial, sans-serif;
@@ -298,7 +298,7 @@
 }
 
 .trail-card__link:hover {
-  background: #ce7040;
+  background: #ad552e;
   color: #f5f1e5;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .trail-detail__back:hover {
-  color: #c0602e;
+  color: #e7dcc0;
 }
 
 .trail-detail__back:focus-visible {
@@ -390,8 +390,8 @@
 
 .trail-detail__bookmark:hover,
 .trail-detail__bookmark--selected {
-  background: #c0602e;
-  border-color: #c0602e;
+  background: #a64d27;
+  border-color: #a64d27;
   color: #f5f1e5;
 }
 

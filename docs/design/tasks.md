@@ -18,7 +18,7 @@
 | T10 | Add loading, error, accessibility, and responsive refinements for the full trail browsing flow | R1-R15, Constitution 3, Performance, Accessibility | T5, T6, T7, T9 | Done |
 | T11 | Validate keyboard access, contrast, and mobile usability across the core screens | Constitution 3, Accessibility, R1, R3, R4, R13 | T10 | Done |
 | T12 | Run usability testing with at least two observers and record findings for improvement | Risk: Usability testing does not identify important problems, Constitution 3, R1-R15 | T10 | Done |
-| T13 | Execute acceptance-criteria testing, correct defects, and re-check the affected trails flow | R1-R15, Definition of Done | T11, T12 | Not started |
+| T13 | Execute acceptance-criteria testing, correct defects, and re-check the affected trails flow | R1-R15, Definition of Done | T11, T12 | Done |
 | T14 | Review the final application scope, expected costs, and readiness for optional deployment | ADR-07, Budget/Timeline, Constitution 1, Scope limitations | T13 | Not started |
 
 **Status values:** Not started · In progress · Done · Blocked
@@ -34,7 +34,7 @@
 | Task | Blocker | Raised | Resolved |
 |------|---------|--------|----------|
 | T1 | Trail selection, required fields, and licensed data source were confirmed. The separate bookmark-persistence question remains open and is not a T1 dependency. | 2026-09-20 | 2026-09-28 |
-| T11 | Contrast check failed for Cream text on Clay (#C0602E): 3.75:1, below the 4.5:1 requirement. Cream text on the Clay hover color (#CE7040) is 3.09:1. The Clay search/filter focus border on Pine (#1F3D31) is 2.80:1, below the 3:1 interface-element requirement. Correct and re-test these states before completing T11. | 2026-09-28 | — |
+| T11 | Resolved: the Cream-on-Clay button/hover text contrast and search/filter focus contrast were corrected and re-tested. Ratios are 5.01:1, 4.52:1, and 8.70:1 respectively. | 2026-09-28 | 2026-09-28 |
 
 ## Quick Self-Check Before You Start Building
 
