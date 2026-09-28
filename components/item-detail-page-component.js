@@ -8,6 +8,18 @@ export default {
       return itemsStore.items.find((item) => item.id === route.params.id);
     });
 
+    const displayValue = (value) => {
+      const normalizedValue = String(value || '').trim();
+      return normalizedValue && normalizedValue !== 'Information unavailable'
+        ? normalizedValue
+        : 'Information unavailable';
+    };
+
+    const displayDistance = (value) => {
+      const normalizedValue = displayValue(value);
+      return normalizedValue === 'Information unavailable' ? normalizedValue : normalizedValue + ' mi';
+    };
+
     const hasOptionalValue = (value) => {
       const normalizedValue = String(value || '').trim();
       return normalizedValue && normalizedValue !== 'Information unavailable';
@@ -16,6 +28,8 @@ export default {
     return {
       itemsStore,
       selectedItem,
+      displayValue,
+      displayDistance,
       hasOptionalValue,
     };
   },
@@ -49,7 +63,7 @@ export default {
             <p class="trail-detail__eyebrow">Trail details</p>
             <h1 class="trail-detail__title">{{ selectedItem.name }}</h1>
             <p class="trail-detail__description">
-              {{ selectedItem.description }}
+              {{ displayValue(selectedItem.description) }}
             </p>
 
             <section class="trail-detail__section" aria-labelledby="trail-overview-heading">
@@ -57,19 +71,19 @@ export default {
               <dl class="trail-detail__details">
                 <div>
                   <dt>Difficulty</dt>
-                  <dd>{{ selectedItem.difficulty }}</dd>
+                  <dd>{{ displayValue(selectedItem.difficulty) }}</dd>
                 </div>
                 <div>
                   <dt>Distance</dt>
-                  <dd>{{ selectedItem.distance }} mi</dd>
+                  <dd>{{ displayDistance(selectedItem.distance) }}</dd>
                 </div>
                 <div>
                   <dt>Elevation gain</dt>
-                  <dd>{{ selectedItem.elevationGain }}</dd>
+                  <dd>{{ displayValue(selectedItem.elevationGain) }}</dd>
                 </div>
                 <div>
                   <dt>Location</dt>
-                  <dd>{{ selectedItem.location }}</dd>
+                  <dd>{{ displayValue(selectedItem.location) }}</dd>
                 </div>
               </dl>
             </section>
@@ -102,6 +116,12 @@ export default {
                 </div>
               </dl>
             </section>
+
+            <p class="trail-detail__disclaimer">
+              Trail information is for planning purposes and may not represent current trail
+              conditions. This application is not an emergency, rescue, or official
+              trail-management service.
+            </p>
           </div>
         </article>
       </div>

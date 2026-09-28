@@ -388,6 +388,15 @@
   margin-bottom: 0;
 }
 
+.trail-detail__disclaimer {
+  border-top: 1px solid rgba(231, 220, 192, 0.2);
+  color: #e7dcc0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+  margin: 32px 0 0;
+  padding-top: 24px;
+}
+
 @media (max-width: 575.98px) {
   .trail-detail__body {
     padding: 24px;
