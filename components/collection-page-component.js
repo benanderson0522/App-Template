@@ -5,6 +5,10 @@ export default {
     const searchText = Vue.ref('');
     const selectedDifficulty = Vue.ref('');
     const selectedDistance = Vue.ref('');
+    const bookmarkedItemIds = String(window.localStorage.getItem('hikingTrailExplorer.bookmarkedItemIds') || '')
+      .split(',')
+      .map((id) => id.trim())
+      .filter(Boolean);
     const searchableFields = [
       'name',
       'description',
@@ -49,12 +53,15 @@ export default {
       });
     });
 
+    const isBookmarked = (itemId) => bookmarkedItemIds.includes(itemId);
+
     return {
       itemsStore,
       searchText,
       selectedDifficulty,
       selectedDistance,
       filteredItems,
+      isBookmarked,
     };
   },
   template: /* html */ `
@@ -136,7 +143,16 @@ export default {
                   class="trail-card__image object-fit-cover" />
 
                 <div class="trail-card__body">
-                  <h2 class="trail-card__title">{{ item.name }}</h2>
+                  <div class="trail-card__title-row">
+                    <h2 class="trail-card__title">{{ item.name }}</h2>
+                    <span
+                      v-if="isBookmarked(item.id)"
+                      class="trail-card__bookmark"
+                      aria-label="Bookmarked trail">
+                      <i class="bi bi-bookmark-fill" aria-hidden="true"></i>
+                      Bookmarked
+                    </span>
+                  </div>
 
                   <dl class="trail-card__details">
                     <div>

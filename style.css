@@ -243,6 +243,24 @@
   margin-bottom: 24px;
 }
 
+.trail-card__title-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.trail-card__bookmark {
+  background: #c0602e;
+  border-radius: 8px;
+  color: #f5f1e5;
+  flex-shrink: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+}
+
 .trail-card__details {
   display: grid;
   gap: 16px;
@@ -348,6 +366,37 @@
   margin-bottom: 16px;
 }
 
+.trail-detail__title-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.trail-detail__bookmark {
+  background: #1f3d31;
+  border: 1px solid #e7dcc0;
+  border-radius: 8px;
+  color: #e7dcc0;
+  flex-shrink: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+
+.trail-detail__bookmark:hover,
+.trail-detail__bookmark--selected {
+  background: #c0602e;
+  border-color: #c0602e;
+  color: #f5f1e5;
+}
+
+.trail-detail__bookmark:focus-visible {
+  outline: 3px solid #e7dcc0;
+  outline-offset: 3px;
+}
+
 .trail-detail__description {
   color: #e7dcc0;
   font-family: "Work Sans", Arial, sans-serif;
@@ -400,6 +449,11 @@
 @media (max-width: 575.98px) {
   .trail-detail__body {
     padding: 24px;
+  }
+
+  .trail-detail__title-row {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .trail-detail__details {

@@ -3,10 +3,35 @@ export default {
   setup() {
     const itemsStore = Vue.inject('itemsStore');
     const route = VueRouter.useRoute();
+    const bookmarkedItemIds = Vue.ref(
+      String(window.localStorage.getItem('hikingTrailExplorer.bookmarkedItemIds') || '')
+        .split(',')
+        .map((id) => id.trim())
+        .filter(Boolean)
+    );
 
     const selectedItem = Vue.computed(() => {
       return itemsStore.items.find((item) => item.id === route.params.id);
     });
+
+    const isBookmarked = Vue.computed(() => {
+      return selectedItem.value ? bookmarkedItemIds.value.includes(selectedItem.value.id) : false;
+    });
+
+    const toggleBookmark = () => {
+      if (!selectedItem.value) {
+        return;
+      }
+
+      const itemId = selectedItem.value.id;
+      bookmarkedItemIds.value = isBookmarked.value
+        ? bookmarkedItemIds.value.filter((id) => id !== itemId)
+        : [...bookmarkedItemIds.value, itemId];
+      window.localStorage.setItem(
+        'hikingTrailExplorer.bookmarkedItemIds',
+        bookmarkedItemIds.value.join(',')
+      );
+    };
 
     const displayValue = (value) => {
       const normalizedValue = String(value || '').trim();
@@ -28,6 +53,8 @@ export default {
     return {
       itemsStore,
       selectedItem,
+      isBookmarked,
+      toggleBookmark,
       displayValue,
       displayDistance,
       hasOptionalValue,
@@ -61,7 +88,19 @@ export default {
 
           <div class="trail-detail__body">
             <p class="trail-detail__eyebrow">Trail details</p>
-            <h1 class="trail-detail__title">{{ selectedItem.name }}</h1>
+            <div class="trail-detail__title-row">
+              <h1 class="trail-detail__title">{{ selectedItem.name }}</h1>
+              <button
+                type="button"
+                class="trail-detail__bookmark"
+                :class="{ 'trail-detail__bookmark--selected': isBookmarked }"
+                :aria-label="isBookmarked ? 'Remove bookmark' : 'Bookmark trail'"
+                :aria-pressed="isBookmarked"
+                @click="toggleBookmark">
+                <i :class="isBookmarked ? 'bi bi-bookmark-fill' : 'bi bi-bookmark'"></i>
+                <span>{{ isBookmarked ? 'Bookmarked' : 'Bookmark trail' }}</span>
+              </button>
+            </div>
             <p class="trail-detail__description">
               {{ displayValue(selectedItem.description) }}
             </p>
