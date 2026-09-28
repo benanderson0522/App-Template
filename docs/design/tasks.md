@@ -16,7 +16,7 @@
 | T8 | Add missing-information handling for unavailable fields and the informational disclaimer | R5, R14, Constitution 1, Compliance/Legal constraint | T7 | Not started |
 | T9 | Implement trail bookmarking with browser localStorage and clear visual bookmark states | R11, R12, R13, ADR-03 | T7 | Done |
 | T10 | Add loading, error, accessibility, and responsive refinements for the full trail browsing flow | R1-R15, Constitution 3, Performance, Accessibility | T5, T6, T7, T9 | In progress |
-| T11 | Validate keyboard access, contrast, and mobile usability across the core screens | Constitution 3, Accessibility, R1, R3, R4, R13 | T10 | Not started |
+| T11 | Validate keyboard access, contrast, and mobile usability across the core screens | Constitution 3, Accessibility, R1, R3, R4, R13 | T10 | In progress |
 | T12 | Run usability testing with at least two observers and record findings for improvement | Risk: Usability testing does not identify important problems, Constitution 3, R1-R15 | T10 | Not started |
 | T13 | Execute acceptance-criteria testing, correct defects, and re-check the affected trails flow | R1-R15, Definition of Done | T11, T12 | Not started |
 | T14 | Review the final application scope, expected costs, and readiness for optional deployment | ADR-07, Budget/Timeline, Constitution 1, Scope limitations | T13 | Not started |
@@ -34,6 +34,7 @@
 | Task | Blocker | Raised | Resolved |
 |------|---------|--------|----------|
 | T1 | Trail selection, required fields, and licensed data source were confirmed. The separate bookmark-persistence question remains open and is not a T1 dependency. | 2026-09-20 | 2026-09-28 |
+| T11 | Contrast check failed for Cream text on Clay (#C0602E): 3.75:1, below the 4.5:1 requirement. Cream text on the Clay hover color (#CE7040) is 3.09:1. The Clay search/filter focus border on Pine (#1F3D31) is 2.80:1, below the 3:1 interface-element requirement. Correct and re-test these states before completing T11. | 2026-09-28 | — |
 
 ## Quick Self-Check Before You Start Building
 
