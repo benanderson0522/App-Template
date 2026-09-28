@@ -61,6 +61,12 @@ const app = Vue.createApp({
                 location: String(row.location || '').trim(),
                 difficulty: String(row.difficulty || '').trim(),
                 distance: String(row.distance || '').trim(),
+                elevationGain: String(row.elevation_gain || '').trim(),
+                pointsOfInterest: String(row.points_of_interest || '').trim(),
+                conditions: String(row.conditions || '').trim(),
+                amenities: String(row.amenities || '').trim(),
+                rating: String(row.rating || '').trim(),
+                reviews: String(row.reviews || '').trim(),
               }));
               itemsStore.error = '';
             }

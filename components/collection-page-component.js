@@ -2,9 +2,38 @@ export default {
   name: 'collection-page-component',
   setup() {
     const itemsStore = Vue.inject('itemsStore');
+    const searchText = Vue.ref('');
+    const searchableFields = [
+      'name',
+      'description',
+      'location',
+      'difficulty',
+      'distance',
+      'elevationGain',
+      'pointsOfInterest',
+      'conditions',
+      'amenities',
+      'rating',
+      'reviews',
+    ];
+    const filteredItems = Vue.computed(() => {
+      const query = searchText.value.trim().toLowerCase();
+      if (!query) {
+        return itemsStore.items;
+      }
+
+      return itemsStore.items.filter((item) =>
+        searchableFields.some((field) => {
+          const value = String(item[field] || '').trim();
+          return value && value !== 'Information unavailable' && value.toLowerCase().includes(query);
+        }),
+      );
+    });
 
     return {
       itemsStore,
+      searchText,
+      filteredItems,
     };
   },
   template: /* html */ `
@@ -15,7 +44,17 @@ export default {
             <p class="trail-collection__eyebrow mb-2">Bloomington, Indiana</p>
             <h1 class="trail-collection__heading mb-0">Explore trails</h1>
           </div>
-          <span class="trail-collection__count">{{ itemsStore.items.length }} trails</span>
+          <span class="trail-collection__count">{{ filteredItems.length }} trails</span>
+        </div>
+
+        <div class="trail-search mb-4">
+          <label class="trail-search__label" for="trail-search">Search trails</label>
+          <input
+            id="trail-search"
+            v-model="searchText"
+            class="trail-search__input"
+            type="search"
+            placeholder="Search by trail name, location, or details" />
         </div>
 
         <div v-if="itemsStore.isLoading" class="alert alert-secondary" role="status">
@@ -31,7 +70,7 @@ export default {
         </div>
 
         <div v-else class="row g-3 g-lg-4">
-          <div class="col-12 col-md-6 col-lg-4" v-for="item in itemsStore.items" :key="item.id">
+          <div class="col-12 col-md-6 col-lg-4" v-for="item in filteredItems" :key="item.id">
             <article class="trail-card h-100">
               <img
                 v-if="item.imageUrl"

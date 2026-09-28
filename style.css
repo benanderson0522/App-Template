@@ -134,6 +134,41 @@
   font-size: 14px;
 }
 
+.trail-search {
+  max-width: 600px;
+}
+
+.trail-search__label {
+  color: #f5f1e5;
+  display: block;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.trail-search__input {
+  background: #1f3d31;
+  border: 1px solid #5c7a5a;
+  border-radius: 8px;
+  color: #f5f1e5;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 16px;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+.trail-search__input::placeholder {
+  color: #e7dcc0;
+  opacity: 0.8;
+}
+
+.trail-search__input:focus {
+  border-color: #c0602e;
+  box-shadow: 0 0 0 3px rgba(192, 96, 46, 0.35);
+  outline: none;
+}
+
 .trail-card {
   background: #1f3d31;
   border: 1px solid rgba(231, 220, 192, 0.2);
