@@ -13,11 +13,11 @@
 | T5 | Implement client-side text search across the trail collection | R7, ADR-02 | T4 | Done |
 | T6 | Implement difficulty and distance filters and display the no-results message when needed | R8, R9, R15, ADR-02 | T4, T5 | Done |
 | T7 | Build the trail detail page with required information, return navigation, and available optional details | R3, R4, R5, R10, ADR-05, ADR-06 | T4 | Done |
-| T8 | Add missing-information handling for unavailable fields and the informational disclaimer | R5, R14, Constitution 1, Compliance/Legal constraint | T7 | Not started |
+| T8 | Add missing-information handling for unavailable fields and the informational disclaimer | R5, R14, Constitution 1, Compliance/Legal constraint | T7 | Done |
 | T9 | Implement trail bookmarking with browser localStorage and clear visual bookmark states | R11, R12, R13, ADR-03 | T7 | Done |
-| T10 | Add loading, error, accessibility, and responsive refinements for the full trail browsing flow | R1-R15, Constitution 3, Performance, Accessibility | T5, T6, T7, T9 | In progress |
-| T11 | Validate keyboard access, contrast, and mobile usability across the core screens | Constitution 3, Accessibility, R1, R3, R4, R13 | T10 | In progress |
-| T12 | Run usability testing with at least two observers and record findings for improvement | Risk: Usability testing does not identify important problems, Constitution 3, R1-R15 | T10 | Not started |
+| T10 | Add loading, error, accessibility, and responsive refinements for the full trail browsing flow | R1-R15, Constitution 3, Performance, Accessibility | T5, T6, T7, T9 | Done |
+| T11 | Validate keyboard access, contrast, and mobile usability across the core screens | Constitution 3, Accessibility, R1, R3, R4, R13 | T10 | Done |
+| T12 | Run usability testing with at least two observers and record findings for improvement | Risk: Usability testing does not identify important problems, Constitution 3, R1-R15 | T10 | Done |
 | T13 | Execute acceptance-criteria testing, correct defects, and re-check the affected trails flow | R1-R15, Definition of Done | T11, T12 | Not started |
 | T14 | Review the final application scope, expected costs, and readiness for optional deployment | ADR-07, Budget/Timeline, Constitution 1, Scope limitations | T13 | Not started |
 
