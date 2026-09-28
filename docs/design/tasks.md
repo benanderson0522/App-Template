@@ -11,7 +11,7 @@
 | T3 | Build the shared primary navigation and homepage flow for the Hiking Trail Explorer | R1, R6, ADR-05 | T2 | Done |
 | T4 | Build the responsive trail collection layout and trail cards with name, difficulty, distance, and location | R2, R3, ADR-04, ADR-05 | T2 | Done |
 | T5 | Implement client-side text search across the trail collection | R7, ADR-02 | T4 | Done |
-| T6 | Implement difficulty and distance filters and display the no-results message when needed | R8, R9, R15, ADR-02 | T4, T5 | Not started |
+| T6 | Implement difficulty and distance filters and display the no-results message when needed | R8, R9, R15, ADR-02 | T4, T5 | Done |
 | T7 | Build the trail detail page with required information, return navigation, and available optional details | R3, R4, R5, R10, ADR-05, ADR-06 | T4 | Not started |
 | T8 | Add missing-information handling for unavailable fields and the informational disclaimer | R5, R14, Constitution 1, Compliance/Legal constraint | T7 | Not started |
 | T9 | Implement trail bookmarking with browser localStorage and clear visual bookmark states | R11, R12, R13, ADR-03 | T7 | Not started |
