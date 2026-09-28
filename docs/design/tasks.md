@@ -6,7 +6,7 @@
 
 | ID | Task | Traces to (R# / ADR#) | Depends on | Status |
 |----|------|--------------------------|------------|--------|
-| T1 | Confirm the initial trail dataset, required fields, and approved source permissions | ADR-01, ADR-08, R2, R5, R7-R10, R14, Constitution 1, Compliance/Legal constraint | — | Blocked |
+| T1 | Confirm the initial trail dataset, required fields, and approved source permissions | ADR-01, ADR-08, R2, R5, R7-R10, R14, Constitution 1, Compliance/Legal constraint | — | Done |
 | T2 | Create the sample trail dataset with required fields and placeholder values for missing optional data | ADR-01, ADR-06, ADR-08, R2, R5, R10, R14 | T1 | Not started |
 | T3 | Build the shared primary navigation and homepage flow for the Hiking Trail Explorer | R1, R6, ADR-05 | T2 | Not started |
 | T4 | Build the responsive trail collection layout and trail cards with name, difficulty, distance, and location | R2, R3, ADR-04, ADR-05 | T2 | Not started |
@@ -33,7 +33,7 @@
 
 | Task | Blocker | Raised | Resolved |
 |------|---------|--------|----------|
-| T1 | The final set of trails, approved source(s), and whether bookmarks should persist after browser close remain open decisions in the specification and plan. | 2026-09-20 | |
+| T1 | Trail selection, required fields, and licensed data source were confirmed. The separate bookmark-persistence question remains open and is not a T1 dependency. | 2026-09-20 | 2026-09-28 |
 
 ## Quick Self-Check Before You Start Building
 

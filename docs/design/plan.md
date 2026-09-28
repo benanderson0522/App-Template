@@ -57,15 +57,31 @@ We will build a responsive web application that allows hikers to browse a collec
   - Optional Bootstrap library
 - Assumptions being made:
   - The initial trail collection will be small enough for client-side search and filtering.
-  - The final trail list and number of trail records still need to be selected.
+  - The initial collection contains five trails: Creek's Edge Trail, Ninth Street Loop, Southeast Trail, Jackson Creek Trail, and Leonard Springs Nature Park Trail.
+  - The City of Bloomington Open Data "Park Trails & Paths" dataset is the approved source for the initial trail names, locations, and distances. Its catalog lists the Open Data Commons Public Domain Dedication and License (PDDL) 1.0. Distances are the sums of mapped segments for each trail label, rounded to three decimal places.
+  - The required trail fields are name, difficulty, distance, and location. Difficulty is not available in the approved dataset and will remain unavailable unless a suitable source is confirmed; optional information will not be invented.
   - Trail information will be obtained from sources that permit reuse or will be rewritten as original sample data.
   - The application will not require user accounts or cross-device bookmark synchronization in the first version.
   - Bookmark information will be stored locally in the browser rather than in a remote database.
   - Some optional information may be unavailable for certain trails.
   - The first version will not provide guaranteed live weather or trail conditions, GPS tracking, active navigation, emergency services, payments, messaging, complete trail coverage, or advanced mapping.
-  - The final data source and image permissions will be confirmed before public deployment.
+  - Image permissions must be confirmed before adding images or public deployment; approved images or placeholders will be used as described in ADR-08.
   - The initial prototype budget is approximately $800, with recurring costs estimated near $150 per year.
   - The project is expected to be completed in approximately 6–8 weeks.
+
+### T1 Dataset Confirmation
+
+The initial five-trail selection and source were confirmed on 2026-09-28. Distances below are sums of the selected trail-label segments in the City dataset; these can differ from rounded totals shown on the City's trail summary page.
+
+| Trail | Distance | Dataset location |
+|---|---:|---|
+| Creek's Edge Trail | 0.676 mi | Creeks Edge Trail Corridor |
+| Ninth Street Loop | 0.196 mi | Rev Ernest D Butler Park |
+| Southeast Trail | 0.285 mi | Southeast Park |
+| Jackson Creek Trail | 1.374 mi | Goat Farm and Sherwood Oaks Park |
+| Leonard Springs Nature Park Trail | 1.158 mi | Leonard Springs Nature Park |
+
+Source: [City of Bloomington Open Data — Park Trails & Paths](https://data.bloomington.in.gov/Parks-Recreation/Park-Trails-Paths/s3cs-my2d). The dataset is identified as official and licensed under [Open Data Commons PDDL 1.0](https://opendatacommons.org/licenses/pddl/1-0/).
 
 ## 5. Risks
 

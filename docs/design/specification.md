@@ -170,11 +170,11 @@ Anything unresolved. Don't let AI or a builder guess silently — list it and ge
  
 | Question | Owner | Status |
 |----------|-------|--------|
-| What trails should be included in the initial trail database? | Project team | Open |
-| How many trails should be included in the first version? | Project team | Open |
+| What trails should be included in the initial trail database? | Project team | Resolved (T1, 2026-09-28): Creek's Edge Trail, Ninth Street Loop, Southeast Trail, Jackson Creek Trail, and Leonard Springs Nature Park Trail. |
+| How many trails should be included in the first version? | Project team | Resolved (T1, 2026-09-28): five. |
 | Should bookmarks persist after the browser is closed? | Project team | Open |
 | Should users be able to sort trails by distance, difficulty, rating, or other attributes? | Project team | Open |
-| What source will provide the trail information? | Project team | Open |
+| What source will provide the trail information? | Project team | Resolved (T1, 2026-09-28): City of Bloomington Open Data "Park Trails & Paths" dataset, licensed under Open Data Commons PDDL 1.0; initial distances use sums of mapped trail-label segments. Difficulty is unavailable in this dataset and will not be guessed. |
 | How frequently should trail condition information be updated? | Project team | Open |
 | Should users be able to submit ratings or reviews? | Project team | Open |
 | Should the application include a map in a future version? | Project team | Open |
